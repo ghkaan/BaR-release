@@ -258,14 +258,14 @@ License overview
 Usage Modes:
 
 Free Mode — permanently available, includes only the basic features:
-  run — batch execution of SAS/R programs (sequential mode only);
-  check — automated checking of LOG and LST files using rule sets.
+- run — batch execution of SAS/R programs (sequential mode only);
+- check — automated checking of LOG and LST files using rule sets.
 
 Paid Mode — enables extended features:
-  parallel — batch execution of SAS/R programs in both sequential and parallel modes;
-  categories — ability to assign categories to programs for more convenient display and for setting different run types (sequential\parallel) for each category.
-  report — generation and export of summary/detailed reports in XLSX format;
-  view — interactive viewing of LOG/LST files with color coding and message filtering.
+- parallel — batch execution of SAS/R programs in both sequential and parallel modes;
+- categories — ability to assign categories to programs for more convenient display and for setting different run types (sequential\parallel) for each category.
+- report — generation and export of summary/detailed reports in XLSX format;
+- view — interactive viewing of LOG/LST files with color coding and message filtering.
 
 License Type:
 
