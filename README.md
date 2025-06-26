@@ -166,6 +166,10 @@ Hotkeys:
 ---
 The Summary Report provides an overview of log issues:
 
+<img src="screenshots/bar_sum1.png" width="400"> 
+
+<img src="screenshots/bar_sum1xls.png" width="400">
+
 Features:
 - List of all programs with issue counts
 - Color-coded by issue severity
@@ -186,6 +190,10 @@ Hotkeys:
 
 ---
 The Detailed Report provides line-by-line log analysis:
+
+<img src="screenshots/bar_det1.png" width="400">
+
+<img src="screenshots/bar_det1xls.png" width="400">
 
 Features:
 - Complete log content with line numbers
