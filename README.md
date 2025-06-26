@@ -274,3 +274,5 @@ A license can be either time-limited (with an expiration date) or perpetual;
 When a time-limited license expires, the application automatically reverts to free mode with basic functionality.
 
 [EULA](EULA.md)
+
+[e-mail](mailto:kaan.batch.runner@gmail.com)
