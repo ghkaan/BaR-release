@@ -1,6 +1,9 @@
 END USER LICENSE AGREEMENT (EULA)
+
 Batch Runner (BaR)
+
 Version: 1.10
+
 Date: 2025-06-26
 
 1. General Terms
