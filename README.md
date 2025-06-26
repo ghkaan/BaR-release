@@ -166,9 +166,9 @@ Hotkeys:
 ---
 The Summary Report provides an overview of log issues:
 
-<img src="screenshots/bar_sum1.png" width="400"> 
+<img src="screenshots/bar_sum1.png" width="600"> 
 
-<img src="screenshots/bar_sum1xls.png" width="400">
+<img src="screenshots/bar_sum1xls.png" width="600">
 
 Features:
 - List of all programs with issue counts
@@ -191,9 +191,9 @@ Hotkeys:
 ---
 The Detailed Report provides line-by-line log analysis:
 
-<img src="screenshots/bar_det1.png" width="400">
+<img src="screenshots/bar_det1.png" width="600">
 
-<img src="screenshots/bar_det1xls.png" width="400">
+<img src="screenshots/bar_det1xls.png" width="600">
 
 Features:
 - Complete log content with line numbers
@@ -251,3 +251,26 @@ The last 5 options are used to:
 [EXCL_SAS] - User-defined SAS exclusion rules (will remove SAS log message from other categories if identified)
 [EXCL_R] - User-defined R exclusion rules (will remove R log message from other categories if identified)
 [RECENT] - List of recently opened *.bar files
+
+---
+License overview
+
+Usage Modes:
+
+Free Mode — permanently available, includes only the basic features:
+  run — batch execution of SAS/R programs (sequential mode only);
+  check — automated checking of LOG and LST files using rule sets.
+
+Paid Mode — enables extended features:
+  parallel — batch execution of SAS/R programs in both sequential and parallel modes;
+  categories — ability to assign categories to programs for more convenient display and for setting different run types (sequential\parallel) for each category.
+  report — generation and export of summary/detailed reports in XLSX format;
+  view — interactive viewing of LOG/LST files with color coding and message filtering.
+
+License Type:
+
+A license can be either time-limited (with an expiration date) or perpetual;
+
+When a time-limited license expires, the application automatically reverts to free mode with basic functionality.
+
+[EULA](EULA.md)
