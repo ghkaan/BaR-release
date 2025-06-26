@@ -4,9 +4,8 @@ Version: {VER}
 Date: {VDT}
 
 1. General Terms
-This End User License Agreement ("Agreement") is a legal contract between you ("User") and the author of the Batch Runner (BaR) software ("Author").
-
-By using this software, you agree to comply with the terms of this Agreement.
+-This End User License Agreement ("Agreement") is a legal contract between you ("User") and the author of the Batch Runner (BaR) software ("Author").
+-By using this software, you agree to comply with the terms of this Agreement.
 
 2. License Terms
 2.1 Free Usage
