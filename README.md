@@ -10,8 +10,6 @@ Batch Runner (BaR) is a tool designed to execute and validate SAS and R programs
 
 The application supports multiple languages and provides extensive logging capabilities.
 
-<img src="screenshots/bar_main3.png" width="400">
-<img src="screenshots/bar_main2.png" width="400">
 <img src="screenshots/bar_main1.png" width="400">
 
 ---
@@ -73,6 +71,8 @@ You can add or remove programs from the list, save the list of loaded programs (
 After loading a job and after launching the programs, several checks are performed: for example, the dates of the programs and logs are compared, and messages in the LOG files are verified.
 Detected issues are displayed in the main window with color coding for better visibility.
 
+<img src="screenshots/bar_main3.png" width="400"> <img src="screenshots/bar_main2.png" width="400">
+
 Columns:
 1. Program index
 2. Program filename
@@ -110,6 +110,8 @@ Context Menu (Right-click):
 ---
 The Log Viewer displays program log files with analysis:
 
+<img src="screenshots/bar_log1.png" width="600">
+
 Features:
 - Color-coded message types (Prohibited, Restricted, Conditional, Informational)
 - Line numbers for reference
@@ -136,6 +138,8 @@ Hotkeys:
 
 ---
 The LST Viewer displays program output (LST) files:
+
+<img src="screenshots/bar_lst1.png" width="600">
 
 Features:
 - Color-coded records
