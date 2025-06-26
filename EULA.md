@@ -6,6 +6,7 @@ Version: 1.10
 
 Date: 2025-06-26
 
+
 1. General Terms
 - This End User License Agreement ("Agreement") is a legal contract between you ("User") and the author of the Batch Runner (BaR) software ("Author").
 - By using this software, you agree to comply with the terms of this Agreement.
