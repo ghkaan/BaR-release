@@ -1,4 +1,5 @@
 END USER LICENSE AGREEMENT (EULA)
+---
 
 Batch Runner (BaR)
 
