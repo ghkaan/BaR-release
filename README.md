@@ -7,6 +7,7 @@ Batch Runner (BaR) is a tool designed to execute and validate SAS and R programs
 - Generate detailed reports with color coding and filters
 - Manage program execution with skip/pause/reset options
 - Use all functions in 3 ways: through menus, hotkeys and context menus
+- Command line parameter can be used to open .bar, .log or .lst files, for example: [>> bar.exe "c:\Project1\ADB\adb.bar"]
 
 The application supports multiple languages and provides extensive logging capabilities.
 
@@ -15,7 +16,7 @@ The application supports multiple languages and provides extensive logging capab
 ---
 The main menu provides access to all application functionality through several sections:
 
-1. File Menu - Job management (new, load, save, recent jobs), program management (add or remove programs)
+1. File Menu - Job management (new, load, save, recent jobs), program management (add or remove programs), some settings
 2. Job Menu - Program execution, sorting, applying categoies, run type, encoding (for SAS)
 3. Reports Menu - Log analysis and reporting
 4. Help Menu - Information about program, help articles
@@ -32,7 +33,8 @@ File Menu contains commands for job management:
 - Add Programs (Ctrl+A) - Add programs to current job
 - Remove Programs (Ctrl+R) - Remove selected programs
 - Language (Ctrl+L) - Change application language (restart required)
-- Quit (Ctrl+Q) - Exit the application, suggest to save the job if it was changed
+- File associations - register or unregister .bar, .log and .lst file types to be opened with BaR (for current user only)
+- Quit (Ctrl+Q) - Exit the application, suggest to save the job if it was changed, save settings in ini file
 
 ---
 Job Menu contains commands for program execution and organization:
