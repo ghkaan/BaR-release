@@ -1,5 +1,5 @@
-# Batch Runner (BaR)
-<img src="splash_list480.png" width="50"> Batch Runner (BaR) is a tool designed to execute and validate SAS and R programs in batch mode. It provides functionality to:
+# <img src="splash_list480.png" width="50"> Batch Runner (BaR)
+Batch Runner (BaR) is a tool designed to execute and validate SAS and R programs in batch mode. It provides functionality to:
 
 - Run multiple programs sequentially or in parallel
 - Categorize programs for organized execution
