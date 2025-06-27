@@ -270,8 +270,6 @@ Paid Mode — enables extended features:
 - report — generation and export of summary/detailed reports in XLSX format;
 - view — interactive viewing of LOG/LST files with color coding and message filtering.
 
-License Type:
-
 A license can be either time-limited (with an expiration date) or perpetual;
 
 When a time-limited license expires, the application automatically reverts to free mode with basic functionality.
