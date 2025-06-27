@@ -7,6 +7,7 @@ Batch Runner (BaR) is a tool designed to execute and validate SAS and R programs
 - Generate detailed reports with color coding and filters
 - Manage program execution with skip/pause/reset options
 - Use all functions in 3 ways: through menus, hotkeys and context menus
+- File associations can be registered for .bar, .log or .lst files
 - Command line parameter can be used to open .bar, .log or .lst files, for example: [>> bar.exe "c:\Project1\ADB\adb.bar"]
 
 The application supports multiple languages and provides extensive logging capabilities.
