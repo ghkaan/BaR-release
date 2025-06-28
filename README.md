@@ -20,64 +20,64 @@ The application supports multiple languages and provides extensive logging capab
 ---
 
 ### Main menu
-Main menu provides access to all application functionality through several sections:
+Provides access to all application functionality through several sections:
 
-1. File Menu - Job management (new, load, save, recent jobs), program management (add or remove programs), some settings
-2. Job Menu - Program execution, sorting, applying categoies, run type, encoding (for SAS)
-3. Reports Menu - Log analysis and reporting
-4. Help Menu - Information about program, help articles
+1. **File** menu - Job management (new, load, save, recent jobs), program management (add or remove programs), some settings
+2. **Job** menu - Program execution, sorting, applying categoies, run type, encoding (for SAS)
+3. **Reports** menu - Log analysis and reporting
+4. **Help** menu - Information about program, help articles
 
 Each menu section contains related commands for specific operations.
 
 ---
 
 ### File menu
-File Menu contains commands for job management:
+Contains commands for job management:
 
-- New Job  (Ctrl+N) - Create a new empty job
-- Load Job (Ctrl+O) - Open an existing job file (.bar)
-- Save Job (Ctrl+S) - Save current job to file (.bar)
-- Recent Files - List of recently opened jobs
-- Add Programs (Ctrl+A) - Add programs to current job
-- Remove Programs (Ctrl+R) - Remove selected programs
-- Language (Ctrl+L) - Change application language (restart required)
-- File associations - register or unregister .bar, .log and .lst file types to be opened with BaR (for current user only)
-- Quit (Ctrl+Q) - Exit the application, suggest to save the job if it was changed, save settings in ini file
+- **New Job**  (Ctrl+N) - Create a new empty job
+- **Load Job** (Ctrl+O) - Open an existing job file (.bar)
+- **Save Job** (Ctrl+S) - Save current job to file (.bar)
+- **Recent Files** - List of recently opened jobs
+- **Add Programs** (Ctrl+A) - Add programs to current job
+- **Remove Programs** (Ctrl+R) - Remove selected programs
+- **Language** (Ctrl+L) - Change application language (restart required)
+- **File associations** - register or unregister .bar, .log and .lst file types to be opened with BaR (for current user only)
+- **Quit** (Ctrl+Q) - Exit the application, suggest to save the job if it was changed, save settings in ini file
 
 ---
 
 ### Job menu
-Job Menu contains commands for program execution and organization:
+Contains commands for program execution and organization:
 
-Sort By:
-- Category - Sort programs by category
-- Program - Sort programs by name
-- Category+Program - Combined sort
+**Sort By**:
+- **Category** - Sort programs by category
+- **Program** - Sort programs by name
+- **Category+Program** - Combined sort
 - Reverse options available for each sort type
-- Checkbox "Uncategorized last" to keep uncategorized section at the end of the list
+- Checkbox "**Uncategorized last**" to keep uncategorized section at the end of the list
 
 Execution:
-- Run (F5) - Execute selected programs and check logs
-- Check (F6) - Validate logs without execution
-- Pause (F7) - Pause current execution
-- Reset (F8) - Reset execution status
+- **Run** (F5) - Execute selected programs and check logs
+- **Check** (F6) - Validate logs without execution
+- **Pause** (F7) - Pause current execution
+- **Reset** (F8) - Reset execution status
 
 Program Management:
-- Skip (Shift+S) - Toggle skip status for selected programs
-- Change Category (Shift+C) - Modify program category
-- Change Run Type (Shift+R) - Set parallel/sequential execution for selected category
-- Change Encoding (Shift+E) - Set encoding (en\\u8) for SAS programs
+- **Skip** (Shift+S) - Toggle skip status for selected programs
+- **Change category** (Shift+C) - Modify program category
+- **Change run type** (Shift+R) - Set parallel/sequential execution for selected category
+- **Change encoding** (Shift+E) - Set encoding (en\\u8) for SAS programs
 
 ---
 
 ### Reports menu
-Reports Menu provides tools for log analysis:
+Provides tools for log analysis:
 
-- Summary Report  (F9) - Overview of log issues
-- Detailed Report (F10) - Line-by-line log analysis
-- Open Log Viewer (Enter) - View selected program log
-- Open LST Viewer (Ctrl+Enter) - View selected program LST
-- Checkbox "Autosummary" - Toggle automatic Log Summary generation at the end of each run
+- **LOG Summary**  (F9) - Overview of log issues
+- **LOG Details** (F10) - Line-by-line log analysis
+- **Open Log** (Enter) - View selected program log in internal viewer
+- **Open LST** (Ctrl+Enter) - View selected program LST in internal viewer
+- Checkbox "**Autosummary**" - Toggle automatic Log Summary generation at the end of each run
 
 ---
 
