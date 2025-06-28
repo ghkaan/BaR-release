@@ -16,7 +16,7 @@ The application supports multiple languages and provides extensive logging capab
 <img src="screenshots/bar_main1.png" width="400">
 
 ---
-## The main menu provides access to all application functionality through several sections:
+### The main menu provides access to all application functionality through several sections:
 
 1. File Menu - Job management (new, load, save, recent jobs), program management (add or remove programs), some settings
 2. Job Menu - Program execution, sorting, applying categoies, run type, encoding (for SAS)
