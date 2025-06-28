@@ -15,6 +15,7 @@
 The application supports multiple languages and provides extensive logging capabilities.
 
 <img src="screenshots/bar_main1.png" width="400">
+
 ---
 
 ### Main menu
