@@ -16,6 +16,7 @@ The application supports multiple languages and provides extensive logging capab
 
 <img src="screenshots/bar_main1.png" width="400">
 ---
+
 ### Main menu
 The **main menu** provides access to all application functionality through several sections:
 
