@@ -1,5 +1,6 @@
 # Batch Runner (BaR)
 <!--img src="splash_list480.png" width="32"-->
+
 ### Overview
 **Batch Runner (BaR)** is a tool designed to execute and validate SAS and R programs in batch mode. It provides functionality to:
 
@@ -19,7 +20,7 @@ The application supports multiple languages and provides extensive logging capab
 ---
 
 ### Main menu
-The **main menu** provides access to all application functionality through several sections:
+Main menu provides access to all application functionality through several sections:
 
 1. File Menu - Job management (new, load, save, recent jobs), program management (add or remove programs), some settings
 2. Job Menu - Program execution, sorting, applying categoies, run type, encoding (for SAS)
@@ -29,6 +30,8 @@ The **main menu** provides access to all application functionality through sever
 Each menu section contains related commands for specific operations.
 
 ---
+
+### File menu
 File Menu contains commands for job management:
 
 - New Job  (Ctrl+N) - Create a new empty job
@@ -42,6 +45,8 @@ File Menu contains commands for job management:
 - Quit (Ctrl+Q) - Exit the application, suggest to save the job if it was changed, save settings in ini file
 
 ---
+
+### Job menu
 Job Menu contains commands for program execution and organization:
 
 Sort By:
@@ -64,6 +69,8 @@ Program Management:
 - Change Encoding (Shift+E) - Set encoding (en\\u8) for SAS programs
 
 ---
+
+### Reports menu
 Reports Menu provides tools for log analysis:
 
 - Summary Report  (F9) - Overview of log issues
@@ -73,6 +80,8 @@ Reports Menu provides tools for log analysis:
 - Checkbox "Autosummary" - Toggle automatic Log Summary generation at the end of each run
 
 ---
+
+### Main window
 The main window displays the list of programs divided into groups or categories. Each group will be launched separately during the run, and you can specify whether the programs in the group should be run sequentially or in parallel.
 You can add or remove programs from the list, save the list of loaded programs (job), and open saved lists (jobs).
 After loading a job and after launching the programs, several checks are performed: for example, the dates of the programs and logs are compared, and messages in the LOG files are verified.
@@ -115,6 +124,8 @@ Context Menu (Right-click):
 - Remove Programs
 
 ---
+
+### LOG viewer
 The Log Viewer displays program log files with analysis:
 
 <img src="screenshots/bar_log1.png" width="600">
@@ -144,6 +155,8 @@ Hotkeys:
 - F1 - Help
 
 ---
+
+### LST viewer
 The LST Viewer displays program output (LST) files:
 
 <img src="screenshots/bar_lst1.png" width="600">
@@ -171,6 +184,8 @@ Hotkeys:
 - F1 - Help
 
 ---
+
+### Summary Report
 The Summary Report provides an overview of log issues:
 
 <img src="screenshots/bar_sum1.png" width="600"> 
@@ -196,6 +211,8 @@ Hotkeys:
 - F1 - Help
 
 ---
+
+### Detailed Report
 The Detailed Report provides line-by-line log analysis:
 
 <img src="screenshots/bar_det1.png" width="600">
@@ -222,6 +239,8 @@ Hotkeys:
 - F1 - Help
 
 ---
+
+### Configuration file
 The application settings are stored in bar.ini:
 
 [EXECUTION]
@@ -260,8 +279,8 @@ The last 5 options are used to:
 [RECENT] - List of recently opened *.bar files
 
 ---
-License overview
 
+### License
 Usage Modes:
 
 Free Mode — permanently available, includes only the basic features:
