@@ -24,7 +24,7 @@ The application supports multiple languages and provides extensive logging capab
 ### Main menu
 Provides access to all application functionality through several sections:
 
-1. **File** menu - Job management (new, load, save, recent jobs), program management (add or remove programs), some settings
+1. **File** menu - Job management (new, load, save, recent jobs), program management (add programs to the job or remove them), some settings
 2. **Job** menu - Program execution, sorting, applying categoies, run type, encoding (for SAS)
 3. **Reports** menu - Log analysis and reporting
 4. **Help** menu - Information about program, help articles
@@ -59,8 +59,8 @@ Contains commands for program execution and organization:
 - Checkbox "**Uncategorized last**" to keep uncategorized section at the end of the list
 
 Execution:
-- **Run** (F5) - Execute selected programs and check logs
-- **Check** (F6) - Validate logs without execution
+- **Run** (F5) - Execute selected programs and check log\lst files and SAS validation dataset optionally
+- **Check** (F6) - Check log\lst\datasets without execution
 - **Pause** (F7) - Pause current execution
 - **Reset** (F8) - Reset execution status
 
@@ -88,6 +88,7 @@ The main window displays the list of programs divided into groups or categories.
 You can add or remove programs from the list, save the list of loaded programs (job), and open saved lists (jobs).
 After loading a job and after launching the programs, several checks are performed: for example, the dates of the programs and logs are compared, and messages in the LOG files are verified.
 Detected issues are displayed in the main window with color coding for better visibility.
+You can select multiple records using LMB with Ctrl\Shift modifiers or by clicking on the category separator.
 
 <img src="screenshots/bar_main3.png" width="400"> <img src="screenshots/bar_main2.png" width="400">
 
