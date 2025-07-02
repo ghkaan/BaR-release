@@ -148,6 +148,7 @@ Navigation:
 - Click summary items to jump to first occurrence
 - Filter records (for example, turn off clean records), then select required message and switch filters again - you will be moved to required line in full or filtered log
 - Use the minimap for quick navigation through the text.
+- Use the button with the arrow below the vertical scrollbar to jump to the next available message.
 
 Context Menu (Right-click):
 - Copy selected text
