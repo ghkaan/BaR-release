@@ -39,7 +39,7 @@ Contains commands for job management:
 - **New Job**  (Ctrl+N) - Create a new empty job
 - **Load Job** (Ctrl+O) - Open an existing job file (.bar)
 - **Save Job** (Ctrl+S) - Save current job to file (.bar)
-- **Recent Files** - List of recently opened jobsб Ctrl+Alt+R opens the most recent file
+- **Recent Files** - List of recently opened jobs, Ctrl+Alt+R opens the most recent file
 - **Add Programs** (Ctrl+A) - Add programs to current job
 - **Remove Programs** (Ctrl+R) - Remove selected programs
 - **Language** (Ctrl+L) - Change application language (restart required)
