@@ -2,10 +2,10 @@
 <!--img src="splash_list480.png" width="32"-->
 
 ### Overview
-**Batch Runner (BaR)** is a tool designed to execute and validate SAS and R programs in batch mode. It provides functionality to:
+**Batch Runner (BaR)** is a tool designed to execute and validate sets of SAS, PY and R programs, BAT and CMD batch files. It provides functionality to:
 
-- Run multiple programs sequentially or in parallel
-- Categorize programs for organized execution
+- Run multiple programs or batch files sequentially or in parallel
+- Categorize programs or batch files for organized execution
 - Validate program outputs (log\lst files, and optionally validation datasets for SAS programs)
 - Generate detailed reports with color coding and filters
 - Manage program execution with skip/pause/reset options
@@ -251,8 +251,14 @@ The application settings are stored in bar.ini:
 [EXECUTION]
 - sas_exe - Path to SAS executable
 - sas_par - SAS execution parameters
+- py_exe - Path to Python executable
+- py_par - Python execution parameters
 - r_exe - Path to R executable
 - r_par - R execution parameters
+- bat_exe - Path to command line interpreter
+- bat_par - BAT execution parameters
+- cmd_exe - Path to command line interpreter
+- cmd_par - CMD execution parameters
 - timeout - Execution timeout in seconds
 - valreg - Regex for validation program names
 - readcomp - True\False flag ot read validation dataset or not
@@ -281,6 +287,8 @@ The last 5 options are used to:
 
 [EXCL_SAS] - User-defined SAS exclusion rules (will remove SAS log message from other categories if identified)
 [EXCL_R] - User-defined R exclusion rules (will remove R log message from other categories if identified)
+[EXCL_BAT] - User-defined BAT exclusion rules (will remove BAT log message from other categories if identified)
+[EXCL_CMD] - User-defined CMD exclusion rules (will remove CMD log message from other categories if identified)
 [RECENT] - List of recently opened *.bar files
 
 ---
