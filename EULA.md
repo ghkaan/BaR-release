@@ -12,6 +12,7 @@ This End User License Agreement ("Agreement") is a legal contract between you ("
 By using this software, you agree to comply with the terms of this Agreement.
 
 2. License Terms
+
 2.1 Free Usage
 A perpetual free license is granted to the User for limited use of the Batch Runner (BaR) software, including:
 Loading and managing a list of programs;
@@ -37,6 +38,7 @@ Upon expiration of a paid license, all extended features will be automatically d
 The software is provided "as is". The Author assumes no responsibility for any loss or damage resulting from the use or inability to use the application.
 
 5. Paid Version Support
+
 5.1 Support Scope
 For users with an active paid license, the following is provided:
 Configuration and usage consultations
