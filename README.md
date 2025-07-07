@@ -266,6 +266,7 @@ The application settings are stored in bar.ini:
 - compdt - Validation dataset datetime stamp column
 - comprc - Validation dataset result column
 
+You can use wildcards %PRG%, %LOG%, %ENC% for program, log name, encoding in xxx_par parameters.
 The last 5 options are used to:
 1) Identify validation programs
 2) Locate the validation SAS datasets
@@ -286,9 +287,13 @@ The last 5 options are used to:
 - tooltipdelay - Tooltip delay in ms
 
 [EXCL_SAS] - User-defined SAS exclusion rules (will remove SAS log message from other categories if identified)
+[EXCL_PY] - User-defined PY exclusion rules (will remove R log message from other categories if identified)
 [EXCL_R] - User-defined R exclusion rules (will remove R log message from other categories if identified)
 [EXCL_BAT] - User-defined BAT exclusion rules (will remove BAT log message from other categories if identified)
 [EXCL_CMD] - User-defined CMD exclusion rules (will remove CMD log message from other categories if identified)
+
+You can use wildcards %ANY%, %NZR%, %BEG%, %END for any text, non-zero numbers, markers of the begin\end in excl_xxx parameters.
+
 [RECENT] - List of recently opened *.bar files
 
 ---
@@ -298,7 +303,8 @@ Usage Modes:
 
 Free Mode — permanently available, includes only the basic features:
 - run — batch execution of SAS/R programs (sequential mode only);
-- check — automated checking of LOG and LST files using rule sets.
+- check — automated checking of LOG and LST files using rule sets;
+- categories — ability to assign categories to programs for for organized execution.
 
 Paid Mode — enables extended features:
 - parallel — batch execution of SAS/R programs in both sequential and parallel modes;
