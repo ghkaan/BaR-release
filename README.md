@@ -4,18 +4,21 @@
 ### Overview
 **Batch Runner (BaR)** is a tool designed to execute and validate sets of SAS, PY and R programs, BAT and CMD batch files. It provides functionality to:
 
-- Run multiple programs or batch files sequentially or in parallel
+- Load jobs, add programs to the list using Drag-n-Drop
+- Run programs or batch files sequentially or in parallel
 - Categorize programs or batch files for organized execution
 - Validate program outputs (log\lst files, and optionally validation datasets for SAS programs)
+- Edit programs in internal editor with syntax highlight
 - Generate detailed reports with color coding and filters
 - Manage program execution with skip/pause/reset options
-- Use all functions in 3 ways: through menus, hotkeys and context menus
-- File associations can be registered for .bar, .log or .lst files (see File menu)
+- Get information about authors from git or svn if exist
+- Access all functions in 3 ways: through menus, hotkeys and context menus
+- File associations can be registered for .bar, .log or .lst files from File menu
 - Command line parameter can be used to open .bar, .log or .lst files, for example:
 ```
 > bar.exe "c:\Project1\ADB\adb.bar"
 ```
-The application supports multiple languages and provides extensive logging capabilities.
+The application supports multiple languages and provides logging capabilities.
 
 <img src="screenshots/bar_main1.png" width="400">
 
@@ -42,6 +45,7 @@ Contains commands for job management:
 - **Recent Files** - List of recently opened jobs, Ctrl+Alt+R opens the most recent file
 - **Add Programs** (Ctrl+A) - Add programs to current job
 - **Remove Programs** (Ctrl+R) - Remove selected programs
+- **Undo\Redo** (Ctrl+Z) - Undo\\redo last change
 - **Language** (Ctrl+L) - Change application language (restart required)
 - **File associations** - register or unregister .bar, .log and .lst file types to be opened with BaR (for current user only)
 - **Quit** (Ctrl+Q) - Exit the application, suggest to save the job if it was changed, save settings in ini file
@@ -63,14 +67,16 @@ Execution:
 - **Check** (F6) - Check log\lst\datasets without execution
 - **Pause** (F7) - Pause current execution
 - **Reset** (F8) - Reset execution status
-
+- **Run selected** (Shift+F5) - Execute only selected programs and check logs and other files
+- **Check selected** (Shift+F6) - Check logs and other files for selected programs without execution
+- 
 Program Management:
 - **Skip** (Shift+S) - Toggle skip status for selected programs
 - **Change category** (Shift+C) - Modify program category
 - **Change run type** (Shift+R) - Set parallel/sequential execution for selected category
 - **Change encoding** (Shift+E) - Set encoding (en\\u8) for SAS programs
 - **Auto categorize** - Assign categories automagically based on program names (ADaM\SDTM\TLF with PROD\VAL postfixes)
-
+- **Create missing pairs** - Look through the list of existing programs (ADaM\SDTM\TLF) and create opposite side records if not found - for example, if only production side programs were identified, then records for validation sides will be created.
 ---
 
 ### Reports menu
@@ -78,8 +84,10 @@ Provides tools for log analysis:
 
 - **LOG Summary**  (F9) - Overview of log issues
 - **LOG Details** (F10) - Line-by-line log analysis
+- **Prog.Summary** (F11) - Overview of issues related to integrity of the run (missing programs, date discrepancies etc)
 - **Open Log** (Enter) - View selected program log in internal viewer
 - **Open LST** (Ctrl+Enter) - View selected program LST in internal viewer
+- **Open Program** (Shift+Enter) - Edit program in internal editor with syntax highlight
 - Checkbox "**Autosummary**" - Toggle automatic Log Summary generation at the end of each run
 
 ---
@@ -110,22 +118,32 @@ For all these cases text lines will be amended with appropriate tooltip.
 
 Hotkeys:
 - Up/Down - Navigate program list
+- LMB, Ctrl+LMB, Shift+LMB - Select required programs, click on category name to select all programs in the category
 - Ctrl+Up/Down - Move selected programs
 - Enter - Open log viewer
 - Ctrl+Enter - Open LST viewer
+- Shift+Enter - Open program editor
 - Shift+S - Toggle skip status
 - Shift+C - Change category
 - Shift+R - Change run type
 - Shift+E - Change encoding
+- Shift+I - Show file information
+- Ctrl+Alt+R - Load most recent job
+- Ctrl+Z - Undo\\Redo last operation
+- Ctrl+Plus\\Ctrl+Minus\\Ctrl+0 - Adjust font size
 Please see main menu for more hotkeys.
 
 Context Menu (Right-click):
+- Run selected
+- Check selected
 - Skip/Unskip
-- Change Category
-- Change Run Type
-- Change Encoding
+- Change category
+- Change run type
+- Change encoding
+- File information
 - Open Log/LST Viewer
 - Remove Programs
+- Undo/Redo
 
 ---
 
@@ -140,7 +158,8 @@ Features:
 - Summary section with message counts for each identified category
 - Filter checkboxes to show/hide message types
 - Minimap – a graphical schematic representation of the text with color-coded entries.
-
+- Open the source program via the context menu.
+  
 Navigation:
 - Up/Down - Scroll line by line
 - PgUp/PgDn - Scroll page by page
@@ -152,7 +171,8 @@ Navigation:
 
 Context Menu (Right-click):
 - Copy selected text
-
+- Find selected text in source program
+- 
 Hotkeys:
 - Esc/Enter - Close window
 - Ctrl+C - Copy selected text
@@ -186,6 +206,56 @@ Context Menu (Right-click):
 Hotkeys:
 - Esc/Enter - Close window
 - Ctrl+C - Copy selected text
+- F1 - Help
+
+---
+
+### Info viewer
+The Info Viewer displays information about selected files:
+
+Features:
+- Shows program name with additional information if identified - type (SDTM, ADaM, TLFs), category, date, full path, current status, list of authors from version control system (git or svn) if exist
+
+Navigation:
+- Up/Down - Scroll line by line
+- PgUp/PgDn - Scroll page by page
+- Home/End - Jump to start/end
+
+Context Menu (Right-click):
+- Copy selected text
+
+Hotkeys:
+- Esc/Enter - Close window
+- Ctrl+C - Copy selected text
+- F1 - Help
+
+---
+
+### Program editor
+Internal program editor for quick program updates:
+
+Features:
+- Simple text editor for SAS, R, py programs, BAT and CMD files
+- Syntax highlight (keywords, numbers and text strings)
+- Text search
+
+Navigation:
+- Up/Down - Scroll line by line
+- PgUp/PgDn - Scroll page by page
+- Home/End - Jump to start/end
+
+Context Menu (Right-click):
+- Copy selected text
+- Cut selected text
+- Paste copied text
+
+Hotkeys:
+- Ctrl+F - Search dialogue
+- Ctrl+S - Save file
+- Ctrl+C - Copy selected text
+- Ctrl+X - Cut selected text
+- Ctrl+V - Paste copied text
+- Ctrl+Z - Undo last changes
 - F1 - Help
 
 ---
@@ -245,6 +315,35 @@ Hotkeys:
 
 ---
 
+### Program Summary Report
+This report provides an overview of issues related to integrity of the run:
+
+Features:
+- List of all programs with their counterparts (production\validation)
+- Provide list of issues identified for each pair of programs and their logs: if counterpart is missing, if log should be checked, if program is newer than the log, if production log is newer than the validation log, if same author participated on both sides (if git or svn used).
+- Export to Excel functionality
+- Auto-filter and color-coding in excel report for easy navigation
+
+Columns:
+1. No - Program pair index
+2. Dev.Prog.Name - Production (development) program name
+3. Dev.Prog.Date - Production program date
+4. Dev.LOG Date - Production program LOG date
+5. Dev.LOG Status - Worst message type in production LOG
+6. Author(s) - List of authors from version control software if exist (git or svn) for production program
+7. Val.Prog.Name - Validation program name
+8. Val.Prog.Date - Validation program date
+9. Val.LOG Date - Validation program LOG date
+10. Val.LOG Status - Worst message type in validation LOG
+11. Author(s) - List of authors from version control software if exist (git or svn) for validation program
+12. Comments - List of identified isues
+
+Hotkeys:
+- Esc/Enter - Close window
+- F1 - Help
+
+---
+
 ### Configuration file
 The application settings are stored in bar.ini:
 
@@ -260,6 +359,10 @@ The application settings are stored in bar.ini:
 - cmd_exe - Path to command line interpreter
 - cmd_par - CMD execution parameters
 - timeout - Execution timeout in seconds
+- sdtmreg - Regex for SDTM type of programs
+- adamreg - Regex for ADaM type of programs
+- tlfsreg - Regex for TLF type of programs
+- prodreg - Regex for production program names
 - valreg - Regex for validation program names
 - readcomp - True\False flag ot read validation dataset or not
 - compid - Validation dataset ID column
@@ -275,16 +378,19 @@ The last 5 options are used to:
 [APPLICATION]
 - language - Interface language (EN, etc.)
 - colwidth - Column widths in main window
+- fontsize - Size of the font for the main window
 - resolution - Main window dimensions
 - sumresolution - Summary report dimensions
 - detresolution - Detailed report dimensions
 - helpresolution - Help window dimensions
+- inforesolution - Info window dimensions
 - threads - Max parallel threads
 - uncat_last - Show uncategorized last
 - no_intro - Skip intro message
 - autosummary - Auto-generate summary report
 - recentcount - Number of recent files to keep
 - tooltipdelay - Tooltip delay in ms
+- completebell - True\False flag to trigger system-defined bell sound (if defined) once run is completed
 
 [EXCL_SAS] - User-defined SAS exclusion rules (will remove SAS log message from other categories if identified)
 [EXCL_PY] - User-defined PY exclusion rules (will remove R log message from other categories if identified)
@@ -298,6 +404,17 @@ You can use wildcards %ANY%, %NZR%, %BEG%, %END for any text, non-zero numbers, 
 
 ---
 
+### LOG messages
+BaR scans LOG files for specific signatures and categorizes detected messages into five groups: PROHIBITED, RESTRICTED, CONDITIONAL, INFORMATIONAL, and CLEAN.
+
+PROHIBITED – Critical errors and options that may suppress error messages; these must be corrected.
+RESTRICTED – System warnings that may indicate potentially dangerous situations leading to data loss or corruption; these must be reviewed and corrected. If it is not possible to correct, should be checked and documented (for example, additional informational message in the log about the check)
+CONDITIONAL – Conditionally acceptable messages that may point to unexpected data or inaccurate data processing; these should be reviewed.
+INFORMATIONAL – Informational messages.
+CLEAN – All other messages.
+
+---
+
 ### License
 Usage Modes:
 
@@ -307,10 +424,11 @@ Free Mode — permanently available, includes only the basic features:
 - categories — ability to assign categories to programs for for organized execution.
 
 Paid Mode — enables extended features:
-- parallel — batch execution of SAS/R programs in both sequential and parallel modes;
-- categories — ability to assign categories to programs for more convenient display and for setting different run types (sequential\parallel) for each category.
-- report — generation and export of summary/detailed reports in XLSX format;
-- view — interactive viewing of LOG/LST files with color coding and message filtering.
+parallel — batch execution of SAS/PY/R programs in both sequential and parallel modes;
+categories — ability to assign categories to programs for more convenient display and for setting different run types (sequential\parallel) for each category.
+report — generation and export of summary/detailed reports in XLSX format;
+view — interactive viewing of LOG/LST files with color coding and message filtering.
+edit — internal program editor with syntax highlight for SAS\R\PY programs and BAT\CMD files.
 
 A license can be either time-limited (with an expiration date) or perpetual;
 
