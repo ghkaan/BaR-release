@@ -261,7 +261,7 @@ Hotkeys:
 ### Program editor
 Internal program editor for quick program updates:
 
-<img src="screenshots/bar_prgeditor1.png" width="400">
+<img src="screenshots/bar_prgeditor1.png" width="600">
 
 Features:
 - Simple text editor for SAS, R, py programs, BAT and CMD files
