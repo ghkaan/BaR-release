@@ -88,6 +88,8 @@ Provides tools for log analysis:
 - **Open Log** (Enter) - View selected program log in internal viewer
 - **Open LST** (Ctrl+Enter) - View selected program LST in internal viewer
 - **Open Program** (Shift+Enter) - Edit program in internal editor with syntax highlight
+- **File information** (Shift+I) - Show information about selected file(s): name, date, full path, author\email information from version control system if exist
+- **GIT|SVN show log** - Show information from the git or svn log (revisions, authors, dates, comments)
 - Checkbox "**Autosummary**" - Toggle automatic Log Summary generation at the end of each run
 
 ---
@@ -109,7 +111,7 @@ Columns:
 5. Log Date - Last LOG modification date
 6. Comp - Comparison results from validation dataset (for SAS only, if available, this column can be disabled in ini file)
 7. LST - Comparison details from validation LST file (Equal\\Unequal)
-8. Status - Current LOG status (worst message type - PROHIBITED\RESTRICTED\CONDITIONAL\INFORMATIONAL or CLEAN if no such messages)
+8. Status (Line) - Current LOG status (worst message type - PROHIBITED\RESTRICTED\CONDITIONAL\INFORMATIONAL or CLEAN if no such messages) and line in the log with first occurence of this message type.
 
 If the program date is later than the log date, a ">" mark will be added between the dates with red color highlighting.
 When a validation SAS dataset is identified, the 'Comp' column will show the PROC COMPARE results with color highlighting: green for comparison result of 0 (match) and red for any non-zero result (mismatch).
@@ -128,6 +130,7 @@ Hotkeys:
 - Shift+R - Change run type
 - Shift+E - Change encoding
 - Shift+I - Show file information
+- Shift+L - Show log from version control system
 - Ctrl+Alt+R - Load most recent job
 - Ctrl+Z - Undo\\Redo last operation
 - Ctrl+Plus\\Ctrl+Minus\\Ctrl+0 - Adjust font size
@@ -140,8 +143,10 @@ Context Menu (Right-click):
 - Change category
 - Change run type
 - Change encoding
-- File information
 - Open Log/LST Viewer
+- Open program editor
+- File information
+- GIT|SVN show log
 - Remove Programs
 - Undo/Redo
 
@@ -231,8 +236,32 @@ Hotkeys:
 
 ---
 
+### GIT\SVN Log Viewer
+This viewer displays version control system (git or svn) log for selected files:
+
+Features:
+- Shows program name with related GIT\SVN Log information if identified - revisions, authors, dates, comments.
+
+Navigation:
+- Up/Down - Scroll line by line
+- PgUp/PgDn - Scroll page by page
+- Home/End - Jump to start/end
+
+Context Menu (Right-click):
+- Copy selected text
+
+Hotkeys:
+- Esc/Enter - Close window
+- Ctrl+A - Selected all lines
+- Ctrl+C - Copy selected text
+- F1 - Help
+
+---
+
 ### Program editor
 Internal program editor for quick program updates:
+
+<img src="screenshots/bar_prgeditor1.png" width="400">
 
 Features:
 - Simple text editor for SAS, R, py programs, BAT and CMD files
@@ -252,6 +281,7 @@ Context Menu (Right-click):
 Hotkeys:
 - Ctrl+F - Search dialogue
 - Ctrl+S - Save file
+- Ctrl+A - Selected all lines
 - Ctrl+C - Copy selected text
 - Ctrl+X - Cut selected text
 - Ctrl+V - Paste copied text
@@ -317,6 +347,10 @@ Hotkeys:
 
 ### Program Summary Report
 This report provides an overview of issues related to integrity of the run:
+
+<img src="screenshots/bar_prgsum1.png" width="600"> 
+
+<img src="screenshots/bar_prgsum1xls.png" width="600">
 
 Features:
 - List of all programs with their counterparts (production\validation)
@@ -407,10 +441,10 @@ You can use wildcards %ANY%, %NZR%, %BEG%, %END for any text, non-zero numbers, 
 ### LOG messages
 BaR scans LOG files for specific signatures and categorizes detected messages into five groups: PROHIBITED, RESTRICTED, CONDITIONAL, INFORMATIONAL, and CLEAN.
 
-PROHIBITED – Critical errors and options that may suppress error messages; these must be corrected.
-RESTRICTED – System warnings that may indicate potentially dangerous situations leading to data loss or corruption; these must be reviewed and corrected. If it is not possible to correct, should be checked and documented (for example, additional informational message in the log about the check)
-CONDITIONAL – Conditionally acceptable messages that may point to unexpected data or inaccurate data processing; these should be reviewed.
-INFORMATIONAL – Informational messages.
+PROHIBITED – Critical errors and options that may suppress error messages; these must be corrected. Examples in SAS logs: records with "ERROR" or "FATAL", "NOTE: The SAS System stopped", "has not been compiled", "NOTE: Division by zero" and many more.
+RESTRICTED – System warnings that may indicate potentially dangerous situations leading to data loss or corruption; these must be reviewed and corrected. If it is not possible to correct, should be checked and documented (for example, additional informational message in the log about the check). Examples in SAS logs: records with "WARNING", "NOTE: MERGE statement has more than one", "NOTE: Numeric values have been converted to character" and many more.
+CONDITIONAL – Conditionally acceptable messages that may point to unexpected data or inaccurate data processing; these should be reviewed. Examples in SAS logs: "NOTE: The above message was for the following by", "NOTE: Invalid data for", "NOTE: No convergence of" and many more.
+INFORMATIONAL – Informational messages. Examples in SAS logs: "already sorted", "ALERT_I", "ALERT_A" and other.
 CLEAN – All other messages.
 
 ---
