@@ -46,7 +46,9 @@ Contains commands for job management:
 - **Add Programs** (Ctrl+A) - Add programs to current job
 - **Remove Programs** (Ctrl+R) - Remove selected programs
 - **Undo\Redo** (Ctrl+Z) - Undo\\redo last change
-- **Language** (Ctrl+L) - Change application language (restart required)
+- **Language** - Change application language (restart required)
+- **Color theme** - Change colors in text areas
+- **Pause on status** - Select log statuses that will pause execution. In parallel execution, all programs that were started simultaneously with the program that caused the pause will be executed and checked.
 - **File associations** - register or unregister .bar, .log and .lst file types to be opened with BaR (for current user only)
 - **Quit** (Ctrl+Q) - Exit the application, suggest to save the job if it was changed, save settings in ini file
 
@@ -85,11 +87,13 @@ Provides tools for log analysis:
 - **LOG Summary**  (F9) - Overview of log issues
 - **LOG Details** (F10) - Line-by-line log analysis
 - **Prog.Summary** (F11) - Overview of issues related to integrity of the run (missing programs, date discrepancies etc)
-- **Open Log** (Enter) - View selected program log in internal viewer
+- **Open LOG** (Enter) - View selected program log in internal viewer
 - **Open LST** (Ctrl+Enter) - View selected program LST in internal viewer
 - **Open Program** (Shift+Enter) - Edit program in internal editor with syntax highlight
+- **LOG check results** (Alt+Enter) - Displays LOG check results for selected files
 - **File information** (Shift+I) - Show information about selected file(s): name, date, full path, author\email information from version control system if exist
 - **GIT|SVN show log** - Show information from the git or svn log (revisions, authors, dates, comments)
+- **GIT|SVN diff** - Show diff information from the git or svn
 - Checkbox "**Autosummary**" - Toggle automatic Log Summary generation at the end of each run
 
 ---
@@ -146,7 +150,8 @@ Context Menu (Right-click):
 - Open Log/LST Viewer
 - Open program editor
 - File information
-- GIT|SVN show log
+- GIT|SVN log
+- GIT|SVN diff 
 - Remove Programs
 - Undo/Redo
 
@@ -177,7 +182,8 @@ Navigation:
 Context Menu (Right-click):
 - Copy selected text
 - Find selected text in source program
-- 
+- Find selected text in Google
+
 Hotkeys:
 - Esc/Enter - Close window
 - Ctrl+C - Copy selected text
@@ -207,6 +213,7 @@ Navigation:
 
 Context Menu (Right-click):
 - Copy selected text
+- Find selected text in Google
 
 Hotkeys:
 - Esc/Enter - Close window
@@ -228,6 +235,29 @@ Navigation:
 
 Context Menu (Right-click):
 - Copy selected text
+- Find selected text in Google
+
+Hotkeys:
+- Esc/Enter - Close window
+- Ctrl+C - Copy selected text
+- F1 - Help
+
+---
+
+### CHK viewer
+he CHK Viewer displays LOG check results for selected files:
+
+Features:
+- Shows program name with additional information if identified - type (SDTM, ADaM, TLFs), category, and list of lines from the LOG with PROHIBITED\RESTRICTED\CONDITIONAL\INFORMATIONAL messages. In free mode this viewer replace LOG viewer.
+
+Navigation:
+- Up/Down - Scroll line by line
+- PgUp/PgDn - Scroll page by page
+- Home/End - Jump to start/end
+
+Context Menu (Right-click):
+- Copy selected text
+- Find selected text in Google
 
 Hotkeys:
 - Esc/Enter - Close window
@@ -249,6 +279,30 @@ Navigation:
 
 Context Menu (Right-click):
 - Copy selected text
+- Find selected text in Google
+
+Hotkeys:
+- Esc/Enter - Close window
+- Ctrl+A - Selected all lines
+- Ctrl+C - Copy selected text
+- F1 - Help
+
+---
+
+### GIT\SVN Diff Viewer
+This viewer displays version control system (git or svn) diff information for selected files:
+
+Features:
+- Shows program name with related GIT\SVN Diff information if identified. Initially get diff for working copy and last commited revision, if no differences, then get diff for previous revision.
+
+Navigation:
+- Up/Down - Scroll line by line
+- PgUp/PgDn - Scroll page by page
+- Home/End - Jump to start/end
+
+Context Menu (Right-click):
+- Copy selected text
+- Find selected text in Google
 
 Hotkeys:
 - Esc/Enter - Close window
@@ -277,6 +331,7 @@ Context Menu (Right-click):
 - Copy selected text
 - Cut selected text
 - Paste copied text
+- Find selected text in Google
 
 Hotkeys:
 - Ctrl+F - Search dialogue
@@ -286,6 +341,7 @@ Hotkeys:
 - Ctrl+X - Cut selected text
 - Ctrl+V - Paste copied text
 - Ctrl+Z - Undo last changes
+- Ctrl+Y - Redo last changes
 - F1 - Help
 
 ---
@@ -393,21 +449,27 @@ The application settings are stored in bar.ini:
 - cmd_exe - Path to command line interpreter
 - cmd_par - CMD execution parameters
 - timeout - Execution timeout in seconds
+- stop_on - Log statuses that will pause execution (PRCI)
+- chkfile - Create CHK file with tagged lines from the LOG (PRCI)
+- syntsas - keywords to be highlighted in program editor for SAS programs
+- syntr - keywords to be highlighted in program editor for R programs
+- syntpy - keywords to be highlighted in program editor for PY programs
+- syntbat - keywords to be highlighted in program editor for BAT scripts
+- syntcmd - keywords to be highlighted in program editor for CMD scripts
 - sdtmreg - Regex for SDTM type of programs
 - adamreg - Regex for ADaM type of programs
 - tlfsreg - Regex for TLF type of programs
-- prodreg - Regex for production program names
-- valreg - Regex for validation program names
 - readcomp - True\False flag ot read validation dataset or not
 - compid - Validation dataset ID column
 - compdt - Validation dataset datetime stamp column
 - comprc - Validation dataset result column
 
 You can use wildcards %PRG%, %LOG%, %ENC% for program, log name, encoding in xxx_par parameters.
-The last 5 options are used to:
-1) Identify validation programs
-2) Locate the validation SAS datasets
-3) Map the PROC COMPARE results to each validation program in the list
+The last 7 options are used to:
+1) Identify type of the program (SDTM\ADaM\TLF)
+2) Identify validation programs
+3) Locate the validation SAS datasets
+4) Map the PROC COMPARE results to each validation program in the list
 
 [APPLICATION]
 - language - Interface language (EN, etc.)
@@ -425,7 +487,8 @@ The last 5 options are used to:
 - recentcount - Number of recent files to keep
 - tooltipdelay - Tooltip delay in ms
 - completebell - True\False flag to trigger system-defined bell sound (if defined) once run is completed
-
+- update_ui - delay in ms and number of repeats after the run is completed
+  
 [EXCL_SAS] - User-defined SAS exclusion rules (will remove SAS log message from other categories if identified)
 [EXCL_PY] - User-defined PY exclusion rules (will remove R log message from other categories if identified)
 [EXCL_R] - User-defined R exclusion rules (will remove R log message from other categories if identified)
