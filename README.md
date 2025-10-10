@@ -289,7 +289,7 @@ Context Menu (Right-click):
 
 Hotkeys:
 - Esc/Enter - Close window
-- Ctrl+A - Selected all lines
+- Ctrl+A - Select all lines
 - Ctrl+C - Copy selected text
 - F1 - Help
 
@@ -312,7 +312,7 @@ Context Menu (Right-click):
 
 Hotkeys:
 - Esc/Enter - Close window
-- Ctrl+A - Selected all lines
+- Ctrl+A - Select all lines
 - Ctrl+C - Copy selected text
 - F1 - Help
 
@@ -342,7 +342,7 @@ Context Menu (Right-click):
 Hotkeys:
 - Ctrl+F - Search dialogue
 - Ctrl+S - Save file
-- Ctrl+A - Selected all lines
+- Ctrl+A - Select all lines
 - Ctrl+C - Copy selected text
 - Ctrl+X - Cut selected text
 - Ctrl+V - Paste copied text
