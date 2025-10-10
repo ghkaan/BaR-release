@@ -225,6 +225,8 @@ Hotkeys:
 ### Info viewer
 The Info Viewer displays information about selected files:
 
+<img src="screenshots/bar_info1.png" width="600">
+
 Features:
 - Shows program name with additional information if identified - type (SDTM, ADaM, TLFs), category, date, full path, current status, list of authors from version control system (git or svn) if exist
 
@@ -247,6 +249,8 @@ Hotkeys:
 ### CHK viewer
 he CHK Viewer displays LOG check results for selected files:
 
+<img src="screenshots/bar_chk1.png" width="600">
+
 Features:
 - Shows program name with additional information if identified - type (SDTM, ADaM, TLFs), category, and list of lines from the LOG with PROHIBITED\RESTRICTED\CONDITIONAL\INFORMATIONAL messages. In free mode this viewer replace LOG viewer.
 
@@ -268,6 +272,8 @@ Hotkeys:
 
 ### GIT\SVN Log Viewer
 This viewer displays version control system (git or svn) log for selected files:
+
+<img src="screenshots/bar_vcslog1.png" width="600">
 
 Features:
 - Shows program name with related GIT\SVN Log information if identified - revisions, authors, dates, comments.
