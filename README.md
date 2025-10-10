@@ -247,7 +247,7 @@ Hotkeys:
 ---
 
 ### CHK viewer
-he CHK Viewer displays LOG check results for selected files:
+The CHK Viewer displays LOG check results for selected files:
 
 <img src="screenshots/bar_chk1.png" width="600">
 
