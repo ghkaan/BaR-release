@@ -7,7 +7,7 @@
 - Load jobs, add programs to the list using Drag-n-Drop
 - Run programs or batch files sequentially or in parallel
 - Categorize programs or batch files for organized execution
-- Validate program outputs (log\lst files, and optionally validation datasets for SAS programs)
+- Analyzes program outputs (log\lst files, and optionally validation datasets for SAS programs)
 - Edit programs in internal editor with syntax highlight
 - Generate detailed reports with color coding and filters
 - Manage program execution with skip/pause/reset options
@@ -18,9 +18,9 @@
 ```
 > bar.exe "c:\Project1\ADB\adb.bar"
 ```
-The application supports multiple languages and provides logging capabilities.
+The application supports multiple languages, color themes, provides logging capabilities.
 
-<img src="screenshots/bar_main1.png" width="400">
+<img src="screenshots/bar_main1.png" width="400"> <img src="screenshots/bar_main1d.png" width="400">
 
 ---
 
