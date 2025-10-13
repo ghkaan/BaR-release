@@ -4,39 +4,39 @@
 ### Overview
 **Batch Runner (BaR)** is a tool designed to execute and validate sets of SAS, PY and R programs, BAT and CMD batch files. It provides functionality to:
 
-- Load jobs, add programs to the list using Drag-n-Drop
+- Load jobs, add programs to the list using drag-and-drop
 - Run programs or batch files sequentially or in parallel
 - Categorize programs or batch files for organized execution
-- Analyzes program outputs (log\lst files, and optionally validation datasets for SAS programs)
-- Edit programs in internal editor with syntax highlight
+- Analyze program outputs (LOG\LST files, and optionally validation datasets for SAS programs)
+- Edit programs in buit-in editor with syntax highlighting
 - Generate detailed reports with color coding and filters
-- Manage program execution with skip/pause/reset options
-- Get information about authors from git or svn if exist
-- Access all functions in 3 ways: through menus, hotkeys and context menus
-- File associations can be registered for .bar, .log or .lst files from File menu
-- Command line parameter can be used to open .bar, .log or .lst files, for example:
+- Manage program execution with skip, pause and reset options
+- Retrieve author information from Git or SVN (if available)
+- Access all functions in three ways: via menus, hotkeys, or context menus
+- Register file associations for `.bar`, `.log`, or `.lst` files through the File menu
+- Open `.bar`, `.log`, or `.lst` files via command-line parameters, for example:
 ```
 > bar.exe "c:\Project1\ADB\adb.bar"
 ```
-The application supports multiple languages, color themes, provides logging capabilities.
+The application supports multiple languages, color themes, and includes logging capabilities.
 
 <img src="screenshots/bar_main1.png" width="400"> <img src="screenshots/bar_main1d.png" width="400">
 
 ---
 
-### Main menu
-Provides access to application functionality through several sections:
+### Main Menu
+Provides access to the application's functionality through several sections:
 
 1. **File** menu - Job management (new, load, save, recent jobs), program management (add programs to the job or remove them), some settings
 2. **Job** menu - Program execution, sorting, applying categoies, run type, encoding (for SAS)
-3. **Reports** menu - Log analysis and reporting
-4. **Help** menu - Information about program, help articles
+3. **Reports** menu - Log analysis and reporting tools
+4. **Help** menu - Information about the program, help articles
 
-Each menu section contains related commands for specific operations.
+Each menu section contains commands related to specific operations.
 
 ---
 
-### File menu
+### File Menu
 Contains commands for job management:
 
 - **New Job**  (Ctrl+N) - Create a new empty job
@@ -50,11 +50,11 @@ Contains commands for job management:
 - **Color theme** - Change colors in text areas
 - **Pause on status** - Select log statuses that will pause execution. In parallel execution, all programs that were started simultaneously with the program that caused the pause will be executed and checked.
 - **File associations** - register or unregister .bar, .log and .lst file types to be opened with BaR (for current user only)
-- **Quit** (Ctrl+Q) - Exit the application, suggest to save the job if it was changed, save settings in ini file
+- **Quit** (Ctrl+Q) - Exit the application, suggest to save the job if it was changed, save settings to the ini file
 
 ---
 
-### Job menu
+### Job Menu
 Contains commands for program execution and organization:
 
 **Sort By**:
@@ -81,7 +81,7 @@ Program Management:
 - **Create missing pairs** - Look through the list of existing programs (ADaM\SDTM\TLF) and create opposite side records if not found - for example, if only production side programs were identified, then records for validation sides will be created.
 ---
 
-### Reports menu
+### Reports Menu
 Provides tools for log analysis:
 
 - **LOG Summary**  (F9) - Overview of log issues
@@ -98,7 +98,7 @@ Provides tools for log analysis:
 
 ---
 
-### Main window
+### Main Window
 The main window displays the list of programs divided into groups or categories. Each group will be launched separately during the run, and you can specify whether the programs in the group should be run sequentially or in parallel.
 You can add or remove programs from the list, save the list of loaded programs (job), and open saved lists (jobs).
 After loading a job and after launching the programs, several checks are performed: for example, the dates of the programs and logs are compared, and messages in the LOG files are verified.
@@ -157,7 +157,7 @@ Context Menu (Right-click):
 
 ---
 
-### LOG viewer
+### LOG Viewer
 The Log Viewer displays program log files with analysis:
 
 <img src="screenshots/bar_log1.png" width="600">
@@ -192,7 +192,7 @@ Hotkeys:
 
 ---
 
-### LST viewer
+### LST Viewer
 The LST Viewer displays program output (LST) files:
 
 <img src="screenshots/bar_lst1.png" width="600">
@@ -222,7 +222,7 @@ Hotkeys:
 
 ---
 
-### Info viewer
+### Info Viewer
 The Info Viewer displays information about selected files:
 
 <img src="screenshots/bar_info1.png" width="600">
@@ -246,7 +246,7 @@ Hotkeys:
 
 ---
 
-### CHK viewer
+### CHK Viewer
 The CHK Viewer displays LOG check results for selected files:
 
 <img src="screenshots/bar_chk1.png" width="600">
@@ -318,7 +318,7 @@ Hotkeys:
 
 ---
 
-### Program editor
+### Program Editor
 Internal program editor for quick program updates:
 
 <img src="screenshots/bar_prgeditor1.png" width="600">
@@ -440,7 +440,7 @@ Hotkeys:
 
 ---
 
-### Configuration file
+### Configuration File
 The application settings are stored in bar.ini:
 
 [EXECUTION]
@@ -507,7 +507,7 @@ You can use wildcards %ANY%, %NZR%, %BEG%, %END for any text, non-zero numbers, 
 
 ---
 
-### LOG messages
+### LOG Messages
 BaR scans LOG files for specific signatures and categorizes detected messages into five groups: PROHIBITED, RESTRICTED, CONDITIONAL, INFORMATIONAL, and CLEAN.
 
 PROHIBITED – Critical errors and options that may suppress error messages; these must be corrected. Examples in SAS logs: records with "ERROR" or "FATAL", "NOTE: The SAS System stopped", "has not been compiled", "NOTE: Division by zero" and many more.
