@@ -25,7 +25,7 @@ The application supports multiple languages, color themes, provides logging capa
 ---
 
 ### Main menu
-Provides access to all application functionality through several sections:
+Provides access to application functionality through several sections:
 
 1. **File** menu - Job management (new, load, save, recent jobs), program management (add programs to the job or remove them), some settings
 2. **Job** menu - Program execution, sorting, applying categoies, run type, encoding (for SAS)
