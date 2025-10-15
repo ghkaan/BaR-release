@@ -4,13 +4,14 @@
 ### Overview
 **Batch Runner (BaR)** is a tool designed to execute and validate sets of SAS, PY and R programs, BAT and CMD batch files. It provides functionality to:
 
-- Load jobs, add programs to the list using drag-and-drop
+- Add programs to the list (job) using menu, buttons, hotkeys and drag-and-drop, remove programs, save and load jobs
 - Run programs or batch files sequentially or in parallel
 - Categorize programs or batch files for organized execution
-- Analyze program outputs (LOG\LST files, and optionally validation datasets for SAS programs)
-- Edit programs in buit-in editor with syntax highlighting
-- Generate detailed reports with color coding and filters
 - Manage program execution with skip, pause and reset options
+- Analyze program outputs (LOG\LST files, and optionally validation datasets for SAS programs)
+- Highlight identified issues in main window in real time, in built-in viewers and reports
+- Generate detailed XLSX reports with color coding and autofilters
+- Edit programs in buit-in editor with syntax highlighting
 - Retrieve author information from Git or SVN (if available)
 - Access all functions in three ways: via menus, hotkeys, or context menus
 - Register file associations for `.bar`, `.log`, or `.lst` files through the File menu
