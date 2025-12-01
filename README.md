@@ -522,7 +522,7 @@ CLEAN – All other messages.
 ### License
 Usage Modes:
 
-Free Mode — permanently available, includes only the basic features:
+Free Mode — permanently available, includes main features:
 - run — batch execution of SAS/R programs (sequential mode only);
 - check — automated checking of LOG and LST files using rule sets;
 - categories — ability to assign categories to programs for for organized execution.
