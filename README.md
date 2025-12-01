@@ -526,6 +526,7 @@ Free Mode — permanently available, includes main features:
 - run — batch execution of SAS/R programs (sequential mode only);
 - check — automated checking of LOG and LST files using rule sets;
 - categories — ability to assign categories to programs for for organized execution.
+- LOG check results viewer, file information viewer, GIT or SVN information viewer
 
 Paid Mode — enables extended features:
 parallel — batch execution of SAS/PY/R programs in both sequential and parallel modes;
