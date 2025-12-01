@@ -93,8 +93,8 @@ Provides tools for log analysis:
 - **Open Program** (Shift+Enter) - Edit program in internal editor with syntax highlight
 - **LOG check results** (Alt+Enter) - Displays LOG check results for selected files
 - **File information** (Shift+I) - Show information about selected file(s): name, date, full path, author\email information from version control system if exist
-- **GIT|SVN show log** - Show information from the git or svn log (revisions, authors, dates, comments)
-- **GIT|SVN diff** - Show diff information from the git or svn
+- **GIT|SVN show log** (Shift+L) - Show information from the git or svn log (revisions, authors, dates, comments)
+- **GIT|SVN diff** (Shift+D) - Show diff information from the git or svn
 - Checkbox "**Autosummary**" - Toggle automatic Log Summary generation at the end of each run
 
 ---
