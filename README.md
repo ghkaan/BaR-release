@@ -529,10 +529,11 @@ Free Mode — permanently available, includes main features:
 - LOG check results viewer, file information viewer, GIT or SVN information viewer
 
 Paid Mode — enables extended features:
-parallel — batch execution of SAS/PY/R programs in both sequential and parallel modes;
-categories — ability to assign categories to programs for more convenient display and for setting different run types (sequential\parallel) for each category.
-report — generation and export of summary/detailed reports in XLSX format;
-view — interactive viewing of LOG/LST files with color coding and message filtering.
+
+parallel — batch execution of SAS/PY/R programs in both sequential and parallel modes;<br>
+categories — ability to assign categories to programs for more convenient display and for setting different run types (sequential\parallel) for each category;<br>
+report — generation and export of summary/detailed reports in XLSX format;<br>
+view — interactive viewing of LOG/LST files with color coding and message filtering;<br>
 edit — internal program editor with syntax highlight for SAS\R\PY programs and BAT\CMD files.
 
 A license can be either time-limited (with an expiration date) or perpetual;
